@@ -86,4 +86,88 @@ Toute reproduction non autorisée est interdite.
 
 ---
 
+---
+
+# 🏛️ Academy of the Four Seasons
+
+> *"Between roots and constellations, discover your destiny at the Academy."*
+
+Welcome to the universe of **The Academy of the Four Seasons**,  
+a school hidden within a living forest where nature, magic, and knowledge intertwine.  
+This repository hosts the **official website** of the project created by [Anthony Gendre (Krozer)](#-author--creator).
+
+---
+
+## 🌳 The Houses
+
+The Academy is divided into **four Houses**, each linked to a sacred tree, a season, and a spirit animal:
+
+| Season | House | Symbol | Totem Spirit | Values |
+|:--:|:--|:--:|:--:|:--|
+| 🌸 Spring | **Luminous Oak** | 🌿 | Deer | Empathy, Healing, Awakening |
+| ☀️ Summer | **Eternal Sequoia** | 🐻 | Bear | Strength, Teamwork, Courage |
+| 🍁 Autumn | **Flaming Maple** | 🐗 | Boar | Creativity, Audacity, Passion |
+| ❄️ Winter | **Silver Willow** | 🦉 | Owl | Wisdom, Night, Stars |
+
+---
+
+## 🪞 Legends and Myths
+
+Ancient stories roam through the halls of the Academy:  
+- 🎃 **Sir Jack-o’-Lantern**, the Halloween guardian  
+- 👑 **Melusine**, the witch of the enchanted rivers  
+- 🕯️ **The Lantern Fairy**, spirit of Celtic light  
+- 🪞 **Baba Yaga**, keeper of the thresholds between worlds
+
+Each legend protects the balance between seasons and magic.
+
+---
+
+## 🌌 Official Website
+
+🪄 **Visit the world here:**  
+👉 [https://krozer24.github.io/academiedes4saisons/](https://krozer24.github.io/academiedes4saisons/)
+
+The site features:
+- The Four Houses  
+- Merlin’s relics  
+- Halloween Legends  
+- Original music (Suno AI)  
+- Official Shop (Redbubble)  
+- Published Book on **Amazon KDP** & **Wattpad**
+
+---
+
+## ⚒️ Technologies
+
+- 🧱 **HTML5 + CSS3** (responsive static site)  
+- 🎨 **Original design** by Néo & Krozer  
+- ☁️ **Hosting:** GitHub Pages  
+- 🔐 **Domain planned:** `academiedes4saisons.fr`  
+- 💌 **Pro contact:** `contact@academiedes4saisons.fr`
+
+---
+
+## 🧑‍💻 Author & Creator
+
+**Anthony Gendre (aka Krozer)**  
+📍 Dordogne, France  
+🌿 Author, Illustrator & Worldbuilder  
+🎥 Creator on TikTok, YouTube & Wattpad  
+
+> *“The Academy isn’t just a story… it’s a universe meant to be lived.”*
+
+---
+
+## 🪶 Copyright
+
+© 2025 – **Anthony Gendre (Krozer)**  
+All texts, visuals, and original concepts belong to the author.  
+Unauthorized reproduction is strictly prohibited.
+
+---
+
+> ✨ *Academy of the Four Seasons – When magic meets the roots of the world.*
+
 > ✨ *Académie des 4 Saisons – Quand la magie rencontre les racines du monde.*
+
