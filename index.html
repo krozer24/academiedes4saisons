@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Académie des 4 Saisons – Univers officiel</title>
+  <meta name="description" content="L'univers de l'Académie des 4 Saisons : maisons, légendes, livre, vidéos et boutique." />
+  <meta name="theme-color" content="#0b0f14" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Académie des 4 Saisons – Univers officiel" />
+  <meta property="og:description" content="Entrez dans la forêt vivante : 4 Maisons, Fontaine aux Étoiles, légendes d'Halloween et le livre." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1200&q=60" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root{
+      --bg:#0b0f14;--card:#0f151c;--muted:#a9b3c1;--text:#e8eef6;--accent:#66e3a8;--accent-2:#7dc5ff;
+      --spring:#72e69a;--summer:#ffcf6a;--autumn:#ff8a5c;--winter:#7fd1ff;
+      --radius:18px;--radius-sm:12px;--shadow:0 6px 24px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:radial-gradient(1000px 600px at 85% -100px,#112028 0%, transparent 60%),
+      radial-gradient(1000px 600px at -20% 10%,#101b22 0%, transparent 60%),
+      var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.75);backdrop-filter:blur(8px);border-bottom:1px solid #1c2630}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 120deg,var(--spring),var(--summer),var(--autumn),var(--winter));box-shadow:var(--shadow)}
+    .brand strong{font-weight:700;letter-spacing:.3px}
+    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid #1f2a35;color:var(--muted)}
+    .pill:hover{border-color:#304150;color:#fff}
+    .cta{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#08141a;border:0}
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero .bg{position:absolute;inset:0;z-index:-1;background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=60') center/cover no-repeat;opacity:.22;filter:saturate(1.1)}
+    .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:56px 0}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #1f2a35;border-radius:999px;color:var(--muted);background:#0f151c}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:14px 0 10px}
+    .lead{color:#cbd7e4;max-width:62ch}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid #1f2a35;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .grid{display:grid;gap:16px}
+    .grid.cols-2{grid-template-columns:1fr 1fr}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:600px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid #1f2a35;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .tag{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;color:#0b0f14}
+    .tag.spring{background:var(--spring)}
+    .tag.summer{background:var(--summer)}
+    .tag.autumn{background:var(--autumn)}
+    .tag.winter{background:var(--winter)}
+    section{padding:56px 0;border-top:1px solid #111821}
+    h2{font-size:clamp(22px,3vw,30px);margin:0 0 12px}
+    .sub{color:var(--muted);margin-bottom:24px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #223140}
+    .btn:hover{border-color:#31475b}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0f14;border:0}
+    .list{display:grid;gap:10px}
+    .list li{display:flex;gap:10px}
+    .list .dot{width:10px;height:10px;border-radius:50%;margin-top:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    footer{padding:36px 0;color:var(--muted)}
+    .footer-grid{display:grid;gap:24px;grid-template-columns:2fr 1fr 1fr}
+    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
+    /* Mobile menu */
+    .menu-btn{display:none}
+    @media (max-width:820px){nav ul{display:none}.menu-btn{display:inline-flex}}
+    .mobile-menu{display:none;position:fixed;inset:64px 14px auto 14px;background:#0f151c;border:1px solid #1f2a35;border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+    .mobile-menu.open{display:block}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="Accueil">
+        <span class="logo" aria-hidden="true"></span>
+        <strong>Académie des 4 Saisons</strong>
+      </a>
+      <nav>
+        <button id="menuToggle" class="btn menu-btn" aria-expanded="false" aria-controls="menuPanel">Menu</button>
+        <ul id="menuDesktop">
+          <li><a class="pill" href="#univers">Univers</a></li>
+          <li><a class="pill" href="#maisons">Maisons</a></li>
+          <li><a class="pill" href="#livre">Le Livre</a></li>
+          <li><a class="pill" href="#legendes">Légendes</a></li>
+          <li><a class="pill" href="#medias">Médias</a></li>
+          <li><a class="pill cta" href="#boutique">Boutique</a></li>
+          <li><a class="pill" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="menuPanel" class="mobile-menu" aria-hidden="true">
+      <a class="pill" href="#univers">Univers</a>
+      <a class="pill" href="#maisons">Maisons</a>
+      <a class="pill" href="#livre">Le Livre</a>
+      <a class="pill" href="#legendes">Légendes</a>
+      <a class="pill" href="#medias">Médias</a>
+      <a class="pill" href="#boutique">Boutique</a>
+      <a class="pill" href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="accueil" class="hero">
+    <div class="bg" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div>
+        <span class="badge">✨ Univers vivant • Fontaine aux Étoiles</span>
+        <h1>Entre racines et constellations, découvre l’Académie des 4 Saisons</h1>
+        <p class="lead">Une école nichée dans une forêt colossale, quatre Maisons liées à des arbres-dortoirs, un système de points par pluie d’étoiles, et des légendes d’Halloween qui veillent à l’équilibre.</p>
+        <div style="display:flex;gap:12px;margin-top:10px">
+          <a class="btn primary" href="#univers">Explorer l’univers</a>
+          <a class="btn" href="#livre">Lire le livre</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="grid cols-2">
+          <div class="card"><span class="tag spring">Chêne Lumineux</span>
+            <p>Maison du renouveau. Empathie, soin, éveil. Dortoir-capsules dans les racines.</p></div>
+          <div class="card"><span class="tag summer">Séquoia Éternel</span>
+            <p>Maison de la force et de l’endurance. Sports totémiques et esprit d’équipe.</p></div>
+          <div class="card"><span class="tag autumn">Érable Flamboyant</span>
+            <p>Maison de la créativité et des arts. Capsules-citrouilles au sein des branches.</p></div>
+          <div class="card"><span class="tag winter">Saule Argenté</span>
+            <p>Maison de la sagesse et de la nuit. Observation des constellations.</p></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section id="univers">
+    <div class="container">
+      <h2>Univers</h2>
+      <p class="sub">Lore, artefacts et lieux majeurs de l’Académie.</p>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>La Fontaine aux Étoiles</h3>
+          <p>Au centre de la Salle des Branches Unies, une fontaine cristalline orchestre la pluie d’étoiles qui nourrit les vasques de chaque Maison quand des points sont remportés.</p>
+        </article>
+        <article class="card">
+          <h3>Relique de Merlin</h3>
+          <p>Chapeau, cape, bâton et grimoire trônent dans une vitrine sacrée. Héritage de Solor, descendant de Merlin.</p>
+        </article>
+        <article class="card">
+          <h3>Pumpki(e) Town</h3>
+          <p>Ville Halloween celtique : runes anciennes, farfadets, banshees réinterprétés et Jack‑o’‑lantern, gardien bienveillant.</p>
+        </article>
+      </div>
+      <ul class="list" style="margin-top:16px">
+        <li><span class="dot"></span><span>Constellations propres à chaque Maison.</span></li>
+        <li><span class="dot"></span><span>Artefacts : Étoile‑Racine, totems sportifs, grimoire.</span></li>
+        <li><span class="dot"></span><span>Créatures : Phénix des Brumes, Thylacine, Dodo…</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="maisons">
+    <div class="container">
+      <h2>Les Maisons</h2>
+      <p class="sub">Choisis ton arbre‑dortoir et ton animal‑totem.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Chêne Lumineux <span class="tag spring">Printemps</span></h3>
+          <p>Cerf – guérison, empathie, renaissance. Capsules‑racines, herboristerie et soin des forêts.</p>
+        </div>
+        <div class="card">
+          <h3>Séquoia Éternel <span class="tag summer">Été</span></h3>
+          <p>Ours – force, entraide, totems sportifs. Vigueur, terrains suspendus, compétitions rituelles.</p>
+        </div>
+        <div class="card">
+          <h3>Érable Flamboyant <span class="tag autumn">Automne</span></h3>
+          <p>Sanglier – arts, audace, feu créatif. Ateliers, vitraux, capsules‑citrouilles.</p>
+        </div>
+        <div class="card">
+          <h3>Saule Argenté <span class="tag winter">Hiver</span></h3>
+          <p>Chouette – sagesse, nuit, étoiles. Observatoire, crypte des constellations, archives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="livre">
+    <div class="container">
+      <h2>Le Livre</h2>
+      <p class="sub">Découvre le roman et lis des extraits gratuits.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Lire maintenant</h3>
+          <p>Extraits et chapitres sur Wattpad.</p>
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Lire sur Wattpad</a>
+        </div>
+        <div class="card">
+          <h3>Version eBook / Broché</h3>
+          <p>Disponible sur Amazon KDP (lien à insérer).</p>
+          <a class="btn" href="#" target="_blank" rel="noopener">Voir sur Amazon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="legendes">
+    <div class="container">
+      <h2>Légendes</h2>
+      <p class="sub">Série d’Halloween : Jack‑o’‑lantern, Mélusine, Baba Yaga, Fée des Lanternes…</p>
+      <div class="grid cols-3">
+        <div class="card"><h3>Jack‑o’‑lantern</h3><p>Gardien bienveillant lié aux sorcières de Salem, revenant chaque 31 octobre.</p></div>
+        <div class="card"><h3>Mélusine</h3><p>Version réinventée, entre folklore européen et magie de l’Académie.</p></div>
+        <div class="card"><h3>Fée des Lanternes</h3><p>Ambiance celtique, processions lumineuses et pactes anciens.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="medias">
+    <div class="container">
+      <h2>Médias</h2>
+      <p class="sub">Dernières vidéos et musiques (Suno) intégrées.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Dernière vidéo TikTok</h3>
+          <p>Intègre ici un embed ou un lien direct.</p>
+          <a class="btn" href="#" target="_blank" rel="noopener">Voir la vidéo</a>
+        </div>
+        <div class="card">
+          <h3>Playlist YouTube</h3>
+          <p>Compilation des shorts & bandes‑sons.</p>
+          <a class="btn" href="#" target="_blank" rel="noopener">Écouter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="boutique">
+    <div class="container">
+      <h2>Boutique</h2>
+      <p class="sub">Produits officiels (Redbubble) – affiches, mugs, t‑shirts.</p>
+      <div class="grid cols-3">
+        <div class="card"><h3>Affiches Maisons</h3><a class="btn primary" href="#" target="_blank" rel="noopener">Voir les affiches</a></div>
+        <div class="card"><h3>Mugs & Textiles</h3><a class="btn primary" href="#" target="_blank" rel="noopener">Voir les mugs</a></div>
+        <div class="card"><h3>Stickers</h3><a class="btn primary" href="#" target="_blank" rel="noopener">Voir les stickers</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="sub">Une question, une collaboration, un partenariat ?</p>
+      <div class="grid cols-2">
+        <form class="card" id="contactForm" onsubmit="sendMessage(event)">
+          <label>Nom<br/><input required name="name" placeholder="Ton nom" style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2a35;background:#0b1117;color:#e8eef6"/></label><br/>
+          <label>Email<br/><input required type="email" name="email" placeholder="ton@email.fr" style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2a35;background:#0b1117;color:#e8eef6"/></label><br/>
+          <label>Message<br/><textarea name="message" rows="5" placeholder="Dis‑moi tout…" style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2a35;background:#0b1117;color:#e8eef6"></textarea></label>
+          <p style="color:var(--muted);font-size:14px">Envoi local (démo). Pour recevoir les messages, connecte un service gratuit (EmailJS / Formspree).</p>
+          <button class="btn primary" type="submit">Envoyer</button>
+          <p id="formStatus" style="margin-top:8px;color:var(--muted)"></p>
+        </form>
+        <div class="card">
+          <h3>Réseaux</h3>
+          <ul class="list">
+            <li><span class="dot"></span><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+            <li><span class="dot"></span><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+            <li><span class="dot"></span><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+            <li><span class="dot"></span><a href="mailto:contact@academiedes4saisons.fr">contact@academiedes4saisons.fr</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="sub" style="margin-top:16px;font-size:13px">RGPD : aucun cookie publicitaire. Mesures d’audience possibles plus tard (Matomo/PluXml). Mentions légales / CGU à ajouter.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Académie des 4 Saisons</strong>
+        <p>© <span id="year"></span> – Anthony Gendre (Antho). Tous droits réservés.</p>
+      </div>
+      <div>
+        <p style="margin:0 0 6px">Navigation</p>
+        <a class="pill" href="#accueil">Haut de page</a>
+      </div>
+      <div>
+        <p style="margin:0 0 6px">Ressources</p>
+        <a class="pill" href="#livre">Le Livre</a>
+        <a class="pill" href="#boutique">Boutique</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // année dynamique
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // menu mobile
+    const toggle = document.getElementById('menuToggle');
+    const panel = document.getElementById('menuPanel');
+    toggle?.addEventListener('click', ()=>{
+      const open = panel.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    });
+    panel?.addEventListener('click', (e)=>{
+      if(e.target.tagName === 'A'){ panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+    });
+
+    // Formulaire (démo locale)
+    function sendMessage(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form).entries());
+      console.log('Message simulé →', data);
+      const status = document.getElementById('formStatus');
+      status.textContent = '✅ Message préparé (démo). Connecte EmailJS ou Formspree pour l’envoi réel.';
+      form.reset();
+    }
+  </script>
+</body>
+</html>
