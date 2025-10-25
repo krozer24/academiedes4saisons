@@ -1,327 +1,264 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Académie des 4 Saisons – Univers officiel</title>
-  <meta name="description" content="L'univers de l'Académie des 4 Saisons : maisons, légendes, livre, vidéos et boutique." />
-  <meta name="theme-color" content="#0b0f14" />
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Académie des 4 Saisons – Univers officiel" />
-  <meta property="og:description" content="Entrez dans la forêt vivante : 4 Maisons, Fontaine aux Étoiles, légendes d'Halloween et le livre." />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?auto=format&fit=crop&w=1200&q=60" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <style>
-    :root{
-      --bg:#0b0f14;--card:#0f151c;--muted:#a9b3c1;--text:#e8eef6;--accent:#66e3a8;--accent-2:#7dc5ff;
-      --spring:#72e69a;--summer:#ffcf6a;--autumn:#ff8a5c;--winter:#7fd1ff;
-      --radius:18px;--radius-sm:12px;--shadow:0 6px 24px rgba(0,0,0,.25);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:radial-gradient(1000px 600px at 85% -100px,#112028 0%, transparent 60%),
-      radial-gradient(1000px 600px at -20% 10%,#101b22 0%, transparent 60%),
-      var(--bg);color:var(--text);line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1100px;margin:0 auto;padding:0 24px}
-    /* Header */
-    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.75);backdrop-filter:blur(8px);border-bottom:1px solid #1c2630}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand .logo{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 120deg,var(--spring),var(--summer),var(--autumn),var(--winter));box-shadow:var(--shadow)}
-    .brand strong{font-weight:700;letter-spacing:.3px}
-    nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0}
-    .pill{padding:8px 12px;border-radius:999px;border:1px solid #1f2a35;color:var(--muted)}
-    .pill:hover{border-color:#304150;color:#fff}
-    .cta{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#08141a;border:0}
-    /* Hero */
-    .hero.bg {
-  position:absolute;
-  inset:0;
-  z-index:-1;
-  background:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  opacity:.22;
-  filter:saturate(1.1);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Académie des 4 Saisons</title>
 
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid #1f2a35;border-radius:999px;color:var(--muted);background:#0f151c}
-    h1{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:14px 0 10px}
-    .lead{color:#cbd7e4;max-width:62ch}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid #1f2a35;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    .grid{display:grid;gap:16px}
-    .grid.cols-2{grid-template-columns:1fr 1fr}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid.cols-3{grid-template-columns:1fr 1fr}}
-    @media (max-width:600px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid #1f2a35;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .tag{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px;color:#0b0f14}
-    .tag.spring{background:var(--spring)}
-    .tag.summer{background:var(--summer)}
-    .tag.autumn{background:var(--autumn)}
-    .tag.winter{background:var(--winter)}
-    section{padding:56px 0;border-top:1px solid #111821}
-    h2{font-size:clamp(22px,3vw,30px);margin:0 0 12px}
-    .sub{color:var(--muted);margin-bottom:24px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #223140}
-    .btn:hover{border-color:#31475b}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0b0f14;border:0}
-    .list{display:grid;gap:10px}
-    .list li{display:flex;gap:10px}
-    .list .dot{width:10px;height:10px;border-radius:50%;margin-top:7px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
-    footer{padding:36px 0;color:var(--muted)}
-    .footer-grid{display:grid;gap:24px;grid-template-columns:2fr 1fr 1fr}
-    @media (max-width:900px){.footer-grid{grid-template-columns:1fr}}
-    /* Mobile menu */
-    .menu-btn{display:none}
-    @media (max-width:820px){nav ul{display:none}.menu-btn{display:inline-flex}}
-    .mobile-menu{display:none;position:fixed;inset:64px 14px auto 14px;background:#0f151c;border:1px solid #1f2a35;border-radius:16px;padding:14px;box-shadow:var(--shadow)}
-    .mobile-menu.open{display:block}
+  <!-- 🪄 SEO de base -->
+  <meta name="description" content="Académie des 4 Saisons : univers magique, Maisons, légendes, livre, musiques et boutique.">
+  <meta name="keywords" content="Académie des 4 Saisons, Anthony Gendre, Krozer, univers magique, légendes, fantasy française, livre fantastique, école de magie, druidisme, roman jeunesse, Jack-o’-lantern, Mélusine, fée des lanternes, Baba Yaga">
+  <link rel="canonical" href="https://krozer24.github.io/academiedes4saisons/">
+  <meta property="og:title" content="Académie des 4 Saisons">
+  <meta property="og:description" content="Entre racines et constellations, découvre l'univers officiel.">
+  <meta property="og:image" content="logo-blason.png">
+  <meta name="theme-color" content="#0b0f14">
+
+  <!-- Icône + police -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD (Livre Amazon) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Book",
+    "name":"Académie des 4 Saisons",
+    "author":{"@type":"Person","name":"Anthony Gendre (Krozer)"},
+    "inLanguage":"fr",
+    "isAccessibleForFree": false,
+    "url":"https://amzn.eu/d/1GW4rCE",
+    "image":"https://krozer24.github.io/academiedes4saisons/logo-blason.png",
+    "offers":{
+      "@type":"Offer",
+      "url":"https://amzn.eu/d/1GW4rCE",
+      "price":"3.00",
+      "priceCurrency":"EUR",
+      "availability":"http://schema.org/InStock",
+      "seller":{"@type":"Organization","name":"Amazon"}
+    },
+    "publisher":{"@type":"Organization","name":"Indépendant"}
+  }
+  </script>
+
+  <style>
+  :root{--gold:#d8c07a;--ink:#e8eef6;--night:#0b0f14;}
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--night);color:var(--ink);font-family:'Cinzel',serif;overflow-x:hidden;}
+
+  /* HEADER (sticky + responsive) */
+  header{position:sticky;top:0;z-index:10;display:flex;gap:18px;align-items:center;justify-content:space-between;padding:12px 40px;background:rgba(10,10,10,.6);border-bottom:1px solid rgba(216,192,122,.2);backdrop-filter:blur(6px)}
+  .brand{display:flex;align-items:center;gap:8px;text-decoration:none}
+  header strong{font-size:1.2rem;color:var(--gold)}
+  .logoimg{width:48px;height:48px;border-radius:12px;object-fit:cover;box-shadow:0 0 10px rgba(216,192,122,.3);transition:.3s}
+  .logoimg:hover{filter:brightness(1.2) drop-shadow(0 0 6px var(--gold))}
+  .nav ul{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+  .nav a{color:var(--gold);text-decoration:none;font-weight:600;transition:.25s}
+  .nav a:hover{color:#fff5c2;text-shadow:0 0 6px rgba(255,239,170,.5)}
+  .nav .ico{margin-right:6px}
+  #burger{display:none;border:1px solid rgba(216,192,122,.35);background:rgba(20,20,20,.55);color:var(--gold);padding:8px 10px;border-radius:10px}
+
+  /* HERO / FOND */
+  .hero{position:relative;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;z-index:-1;background:url('bg.jpg?v=1') center/cover no-repeat;background-color:#0b0f14;opacity:.3;filter:saturate(1.1)}
+  .hero-inner{padding:80px 20px;text-align:center}
+  .hero-logo{width:96px;height:96px;border-radius:18px;box-shadow:0 0 16px rgba(216,192,122,.35)}
+  .hero-cta a{padding:10px 14px;border:1px solid rgba(216,192,122,.35);border-radius:10px;color:var(--gold);text-decoration:none;display:inline-block}
+  .hero-cta a.cta-gold{background:var(--gold);color:#0b0f14;font-weight:800}
+
+  /* SECTIONS */
+  section{padding:60px 20px;text-align:center}
+  h2{font-size:2rem;color:var(--gold);text-shadow:0 0 6px rgba(216,192,122,.3);margin:0 0 8px}
+  p.intro{max-width:700px;margin:0 auto 30px;color:#e6e2c0;font-style:italic}
+
+  /* CARTES */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:1100px;margin:0 auto}
+  .card{background:rgba(20,20,20,.55);border:1px solid rgba(216,192,122,.22);border-radius:16px;padding:18px;transition:.3s}
+  .card:hover{transform:translateY(-5px);box-shadow:0 0 15px rgba(216,192,122,.3)}
+  .card img{width:64px;height:64px;margin-bottom:10px;filter:brightness(1.15)}
+  .card h3{color:var(--gold);margin:8px 0}
+  .card p{color:#e6e2c0;font-size:.95rem}
+
+  /* CONTACT */
+  .contact-form{max-width:560px;margin:0 auto;text-align:left;background:rgba(20,20,20,.55);border:1px solid rgba(216,192,122,.22);border-radius:14px;padding:18px}
+  .contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #2b3946;background:#0b1117;color:#e8eef6}
+  .contact-form button{margin-top:8px;padding:10px 14px;border-radius:10px;border:1px solid rgba(216,192,122,.35);color:var(--gold);background:transparent;cursor:pointer}
+
+  /* FOOTER */
+  footer{padding:28px 20px;text-align:center;color:#cfc9a5;border-top:1px solid rgba(216,192,122,.2)}
+  footer a{color:var(--gold);text-decoration:none}
+
+  /* Bouton Amazon flottant */
+  .buy-fab{position:fixed;right:16px;bottom:16px;z-index:30;background:var(--gold);color:#0b0f14;border:none;border-radius:14px;padding:12px 16px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35),0 0 0 2px rgba(216,192,122,.25);animation:pulse 2.4s ease-in-out infinite}
+  .buy-fab:hover{filter:brightness(1.05)}
+  @keyframes pulse{0%,100%{transform:translateY(0);box-shadow:0 8px 24px rgba(0,0,0,.35),0 0 0 2px rgba(216,192,122,.25)}50%{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 0 3px rgba(216,192,122,.35)}}
+
+  /* Apparition douce */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* Responsive nav */
+  @media (max-width: 820px){
+    header{padding:12px 16px}
+    #burger{display:block;margin-left:auto}
+    .nav ul{position:fixed;top:64px;right:12px;left:12px;display:none;flex-direction:column;gap:12px;padding:14px;background:rgba(12,12,12,.9);border:1px solid rgba(216,192,122,.22);border-radius:14px;backdrop-filter:blur(8px)}
+    .nav ul.show{display:flex}
+    .nav a{display:block;padding:10px 12px;border-radius:10px;background:rgba(20,20,20,.55)}
+  }
   </style>
 </head>
 <body>
+
+  <!-- 🏛️ HEADER (responsive) -->
   <header>
-    <div class="container nav" role="navigation" aria-label="Navigation principale">
-      <a class="brand" href="#accueil" aria-label="Accueil">
-        <span class="logo" aria-hidden="true"></span>
-        <strong>Académie des 4 Saisons</strong>
-      </a>
-      <nav>
-        <button id="menuToggle" class="btn menu-btn" aria-expanded="false" aria-controls="menuPanel">Menu</button>
-        <ul id="menuDesktop">
-          <li><a class="pill" href="#univers">Univers</a></li>
-          <li><a class="pill" href="#maisons">Maisons</a></li>
-          <li><a class="pill" href="#livre">Le Livre</a></li>
-          <li><a class="pill" href="#legendes">Légendes</a></li>
-          <li><a class="pill" href="#medias">Médias</a></li>
-          <li><a class="pill cta" href="#boutique">Boutique</a></li>
-          <li><a class="pill" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div id="menuPanel" class="mobile-menu" aria-hidden="true">
-      <a class="pill" href="#univers">Univers</a>
-      <a class="pill" href="#maisons">Maisons</a>
-      <a class="pill" href="#livre">Le Livre</a>
-      <a class="pill" href="#legendes">Légendes</a>
-      <a class="pill" href="#medias">Médias</a>
-      <a class="pill" href="#boutique">Boutique</a>
-      <a class="pill" href="#contact">Contact</a>
-    </div>
+    <a class="brand" href="#accueil" aria-label="Accueil">
+      <img src="logo-blason.png" alt="Blason Académie" class="logoimg" loading="lazy" width="48" height="48">
+      <strong>Académie des 4 Saisons</strong>
+    </a>
+
+    <button id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navList">☰</button>
+
+    <nav class="nav">
+      <ul id="navList">
+        <li><a href="#accueil"><span class="ico">🏰</span> Accueil</a></li>
+        <li><a href="#maisons"><span class="ico">🌿</span> Maisons</a></li>
+        <li><a href="#legendes"><span class="ico">🕯️</span> Légendes</a></li>
+        <li><a href="#livre"><span class="ico">📜</span> Livre</a></li>
+        <li><a href="#boutique"><span class="ico">🏺</span> Boutique</a></li>
+        <li><a href="#medias"><span class="ico">🎥</span> Médias</a></li>
+        <li><a href="#contact"><span class="ico">✉️</span> Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main id="accueil" class="hero">
-    <div class="bg" aria-hidden="true"></div>
-    <div class="container hero-inner">
-      <div>
-        <span class="badge">✨ Univers vivant • Fontaine aux Étoiles</span>
-        <h1>Entre racines et constellations, découvre l’Académie des 4 Saisons</h1>
-        <p class="lead">Une école nichée dans une forêt colossale, quatre Maisons liées à des arbres-dortoirs, un système de points par pluie d’étoiles, et des légendes d’Halloween qui veillent à l’équilibre.</p>
-        <div style="display:flex;gap:12px;margin-top:10px">
-          <a class="btn primary" href="#univers">Explorer l’univers</a>
-          <a class="btn" href="#livre">Lire le livre</a>
-        </div>
-      </div>
-      <aside class="hero-card">
-        <div class="grid cols-2">
-          <div class="card"><span class="tag spring">Chêne Lumineux</span>
-            <p>Maison du renouveau. Empathie, soin, éveil. Dortoir-capsules dans les racines.</p></div>
-          <div class="card"><span class="tag summer">Séquoia Éternel</span>
-            <p>Maison de la force et de l’endurance. Sports totémiques et esprit d’équipe.</p></div>
-          <div class="card"><span class="tag autumn">Érable Flamboyant</span>
-            <p>Maison de la créativité et des arts. Capsules-citrouilles au sein des branches.</p></div>
-          <div class="card"><span class="tag winter">Saule Argenté</span>
-            <p>Maison de la sagesse et de la nuit. Observation des constellations.</p></div>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <section id="univers">
-    <div class="container">
-      <h2>Univers</h2>
-      <p class="sub">Lore, artefacts et lieux majeurs de l’Académie.</p>
-      <div class="grid cols-3">
-        <article class="card">
-          <h3>La Fontaine aux Étoiles</h3>
-          <p>Au centre de la Salle des Branches Unies, une fontaine cristalline orchestre la pluie d’étoiles qui nourrit les vasques de chaque Maison quand des points sont remportés.</p>
-        </article>
-        <article class="card">
-          <h3>Relique de Merlin</h3>
-          <p>Chapeau, cape, bâton et grimoire trônent dans une vitrine sacrée. Héritage de Solor, descendant de Merlin.</p>
-        </article>
-        <article class="card">
-          <h3>Pumpki(e) Town</h3>
-          <p>Ville Halloween celtique : runes anciennes, farfadets, banshees réinterprétés et Jack‑o’‑lantern, gardien bienveillant.</p>
-        </article>
-      </div>
-      <ul class="list" style="margin-top:16px">
-        <li><span class="dot"></span><span>Constellations propres à chaque Maison.</span></li>
-        <li><span class="dot"></span><span>Artefacts : Étoile‑Racine, totems sportifs, grimoire.</span></li>
-        <li><span class="dot"></span><span>Créatures : Phénix des Brumes, Thylacine, Dodo…</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="maisons">
-    <div class="container">
-      <h2>Les Maisons</h2>
-      <p class="sub">Choisis ton arbre‑dortoir et ton animal‑totem.</p>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Chêne Lumineux <span class="tag spring">Printemps</span></h3>
-          <p>Cerf – guérison, empathie, renaissance. Capsules‑racines, herboristerie et soin des forêts.</p>
-        </div>
-        <div class="card">
-          <h3>Séquoia Éternel <span class="tag summer">Été</span></h3>
-          <p>Ours – force, entraide, totems sportifs. Vigueur, terrains suspendus, compétitions rituelles.</p>
-        </div>
-        <div class="card">
-          <h3>Érable Flamboyant <span class="tag autumn">Automne</span></h3>
-          <p>Sanglier – arts, audace, feu créatif. Ateliers, vitraux, capsules‑citrouilles.</p>
-        </div>
-        <div class="card">
-          <h3>Saule Argenté <span class="tag winter">Hiver</span></h3>
-          <p>Chouette – sagesse, nuit, étoiles. Observatoire, crypte des constellations, archives.</p>
-        </div>
+  <!-- 🌌 HERO -->
+  <section id="accueil" class="hero reveal">
+    <div class="bg"></div>
+    <div class="hero-inner">
+      <img src="logo-blason.png" alt="Blason" class="hero-logo" loading="lazy" width="96" height="96">
+      <h1 style="margin:16px 0 8px;color:var(--gold);font-size:2rem;">Entre racines et constellations</h1>
+      <p style="max-width:680px;margin:0 auto 16px;color:#e6e2c0;">Bienvenue à l'Académie des 4 Saisons — une école nichée dans une forêt vivante, guidée par la Fontaine aux Étoiles.</p>
+      <div class="hero-cta" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="#maisons">Découvrir les Maisons</a>
+        <a class="cta-gold" href="https://amzn.eu/d/1GW4rCE" target="_blank" rel="noopener nofollow">📜 Acheter le livre (3€)</a>
       </div>
     </div>
   </section>
 
-  <section id="livre">
-    <div class="container">
-      <h2>Le Livre</h2>
-      <p class="sub">Découvre le roman et lis des extraits gratuits.</p>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Lire maintenant</h3>
-          <p>Extraits et chapitres sur Wattpad.</p>
-          <a class="btn primary" href="#" target="_blank" rel="noopener">Lire sur Wattpad</a>
-        </div>
-        <div class="card">
-          <h3>Version eBook / Broché</h3>
-          <p>Disponible sur Amazon KDP (lien à insérer).</p>
-          <a class="btn" href="#" target="_blank" rel="noopener">Voir sur Amazon</a>
-        </div>
-      </div>
+  <!-- 🌿 MAISONS -->
+  <section id="maisons" class="reveal">
+    <h2>🏛️ Les Maisons</h2>
+    <p class="intro">Chaque Maison reflète une saison, un arbre sacré et une sagesse unique.</p>
+    <div class="grid">
+      <div class="card reveal"><img loading="lazy" width="64" height="64" src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Oak_leaf_icon.svg" alt="Chêne Lumineux"><h3>🌸 Chêne Lumineux</h3><p>Printemps — Éveil, empathie, renaissance.</p></div>
+      <div class="card reveal"><img loading="lazy" width="64" height="64" src="https://upload.wikimedia.org/wikipedia/commons/d/dc/Sun_icon.svg" alt="Séquoia Éternel"><h3>☀️ Séquoia Éternel</h3><p>Été — Courage, entraide, passion.</p></div>
+      <div class="card reveal"><img loading="lazy" width="64" height="64" src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Maple_leaf_icon.svg" alt="Érable Flamboyant"><h3>🍁 Érable Flamboyant</h3><p>Automne — Créativité, audace, expression.</p></div>
+      <div class="card reveal"><img loading="lazy" width="64" height="64" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Snowflake_icon.svg" alt="Saule Argenté"><h3>❄️ Saule Argenté</h3><p>Hiver — Sagesse, calme, observation.</p></div>
     </div>
   </section>
 
-  <section id="legendes">
-    <div class="container">
-      <h2>Légendes</h2>
-      <p class="sub">Série d’Halloween : Jack‑o’‑lantern, Mélusine, Baba Yaga, Fée des Lanternes…</p>
-      <div class="grid cols-3">
-        <div class="card"><h3>Jack‑o’‑lantern</h3><p>Gardien bienveillant lié aux sorcières de Salem, revenant chaque 31 octobre.</p></div>
-        <div class="card"><h3>Mélusine</h3><p>Version réinventée, entre folklore européen et magie de l’Académie.</p></div>
-        <div class="card"><h3>Fée des Lanternes</h3><p>Ambiance celtique, processions lumineuses et pactes anciens.</p></div>
-      </div>
+  <!-- 🕯️ LÉGENDES -->
+  <section id="legendes" class="reveal">
+    <h2>🕯️ Légendes</h2>
+    <p class="intro">Des récits anciens veillent sur l’équilibre des saisons.</p>
+    <div class="grid">
+      <div class="card reveal"><h3>🎃 Jack-o’-lantern</h3><p>Gardien d’Halloween. Il protège l’Académie des esprits moqueurs.</p></div>
+      <div class="card reveal"><h3>👑 Mélusine</h3><p>Sorcière des rivières et des ponts anciens. Elle guide les âmes perdues.</p></div>
+      <div class="card reveal"><h3>🕯️ Fée des Lanternes</h3><p>Guide des processions de Samhain. Sa lumière rassure les élèves.</p></div>
+      <div class="card reveal"><h3>🪄 Baba Yaga</h3><p>Gardienne des frontières. Sa cabane choisit les voyageurs dignes.</p></div>
     </div>
   </section>
 
-  <section id="medias">
-    <div class="container">
-      <h2>Médias</h2>
-      <p class="sub">Dernières vidéos et musiques (Suno) intégrées.</p>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Dernière vidéo TikTok</h3>
-          <p>Intègre ici un embed ou un lien direct.</p>
-          <a class="btn" href="#" target="_blank" rel="noopener">Voir la vidéo</a>
-        </div>
-        <div class="card">
-          <h3>Playlist YouTube</h3>
-          <p>Compilation des shorts & bandes‑sons.</p>
-          <a class="btn" href="#" target="_blank" rel="noopener">Écouter</a>
-        </div>
-      </div>
+  <!-- 📜 LIVRE (Amazon) -->
+  <section id="livre" class="reveal">
+    <h2>📜 Le Livre</h2>
+    <p class="intro">Découvre l’histoire officielle de l’Académie — disponible dès maintenant.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a href="https://amzn.eu/d/1GW4rCE" target="_blank" rel="noopener nofollow"
+         style="padding:12px 16px;border:1px solid rgba(216,192,122,.35);border-radius:10px;color:var(--night);background:var(--gold);text-decoration:none;font-weight:800">
+        Acheter sur Amazon (3€)
+      </a>
+      <a href="https://amzn.eu/d/1GW4rCE" target="_blank" rel="noopener nofollow"
+         style="padding:12px 16px;border:1px solid rgba(216,192,122,.35);border-radius:10px;color:var(--gold);text-decoration:none">
+        Lire un extrait (Amazon)
+      </a>
     </div>
   </section>
 
-  <section id="boutique">
-    <div class="container">
-      <h2>Boutique</h2>
-      <p class="sub">Produits officiels (Redbubble) – affiches, mugs, t‑shirts.</p>
-      <div class="grid cols-3">
-        <div class="card"><h3>Affiches Maisons</h3><a class="btn primary" href="#" target="_blank" rel="noopener">Voir les affiches</a></div>
-        <div class="card"><h3>Mugs & Textiles</h3><a class="btn primary" href="#" target="_blank" rel="noopener">Voir les mugs</a></div>
-        <div class="card"><h3>Stickers</h3><a class="btn primary" href="#" target="_blank" rel="noopener">Voir les stickers</a></div>
-      </div>
-    </div>
+  <!-- 🛍️ BOUTIQUE -->
+  <section id="boutique" class="reveal">
+    <h2>🏺 Boutique</h2>
+    <p class="intro">Affiches, t-shirts et objets magiques disponibles sur Redbubble.</p>
+    <a href="https://www.redbubble.com" target="_blank" rel="noopener"
+       style="padding:10px 14px;border:1px solid rgba(216,192,122,.35);border-radius:10px;color:var(--gold);text-decoration:none">Voir la boutique</a>
   </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p class="sub">Une question, une collaboration, un partenariat ?</p>
-      <div class="grid cols-2">
-        <form class="card" id="contactForm" onsubmit="sendMessage(event)">
-          <label>Nom<br/><input required name="name" placeholder="Ton nom" style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2a35;background:#0b1117;color:#e8eef6"/></label><br/>
-          <label>Email<br/><input required type="email" name="email" placeholder="ton@email.fr" style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2a35;background:#0b1117;color:#e8eef6"/></label><br/>
-          <label>Message<br/><textarea name="message" rows="5" placeholder="Dis‑moi tout…" style="width:100%;padding:10px;border-radius:10px;border:1px solid #1f2a35;background:#0b1117;color:#e8eef6"></textarea></label>
-          <p style="color:var(--muted);font-size:14px">Envoi local (démo). Pour recevoir les messages, connecte un service gratuit (EmailJS / Formspree).</p>
-          <button class="btn primary" type="submit">Envoyer</button>
-          <p id="formStatus" style="margin-top:8px;color:var(--muted)"></p>
-        </form>
-        <div class="card">
-          <h3>Réseaux</h3>
-          <ul class="list">
-            <li><span class="dot"></span><a href="#" target="_blank" rel="noopener">TikTok</a></li>
-            <li><span class="dot"></span><a href="#" target="_blank" rel="noopener">Instagram</a></li>
-            <li><span class="dot"></span><a href="#" target="_blank" rel="noopener">YouTube</a></li>
-            <li><span class="dot"></span><a href="mailto:contact@academiedes4saisons.fr">contact@academiedes4saisons.fr</a></li>
-          </ul>
-        </div>
-      </div>
-      <p class="sub" style="margin-top:16px;font-size:13px">RGPD : aucun cookie publicitaire. Mesures d’audience possibles plus tard (Matomo/PluXml). Mentions légales / CGU à ajouter.</p>
-    </div>
+  <!-- 🎥 MÉDIAS -->
+  <section id="medias" class="reveal">
+    <h2>🎥 Médias</h2>
+    <p class="intro">Vidéos et musiques de l’Académie. Le livre est aussi dispo :
+      <a href="https://amzn.eu/d/1GW4rCE" target="_blank" rel="noopener nofollow" style="color:var(--gold);text-decoration:none;font-weight:700">Amazon (3€)</a>
+    </p>
+    <a href="https://www.youtube.com" target="_blank" rel="noopener"
+       style="padding:10px 14px;border:1px solid rgba(216,192,122,.35);border-radius:10px;color:var(--gold);text-decoration:none">Chaîne YouTube</a>
   </section>
 
+  <!-- ✉️ CONTACT (Formspree) -->
+  <section id="contact" class="reveal">
+    <h2>✉️ Contact</h2>
+    <p class="intro">Une question, une collaboration, un partenariat ? Écris-nous.</p>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Nom<br><input name="name" required></label><br><br>
+      <label>Email<br><input type="email" name="email" required></label><br><br>
+      <label>Message<br><textarea name="message" rows="5" required></textarea></label><br>
+      <button type="submit">Envoyer</button>
+    </form>
+    <p style="margin-top:10px;color:#cfc9a5;font-size:.9rem">RGPD : pas de cookies publicitaires. Données uniquement via ce formulaire.</p>
+  </section>
+
+  <!-- ⚖️ MENTIONS -->
+  <section id="mentions" class="reveal" style="padding:28px 20px;text-align:center;color:#cfc9a5">
+    <p>Site non commercial. Hébergement : GitHub Pages. Aucune utilisation de cookies publicitaires.</p>
+  </section>
+
+  <!-- 🦶 FOOTER -->
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Académie des 4 Saisons</strong>
-        <p>© <span id="year"></span> – Anthony Gendre (Antho). Tous droits réservés.</p>
-      </div>
-      <div>
-        <p style="margin:0 0 6px">Navigation</p>
-        <a class="pill" href="#accueil">Haut de page</a>
-      </div>
-      <div>
-        <p style="margin:0 0 6px">Ressources</p>
-        <a class="pill" href="#livre">Le Livre</a>
-        <a class="pill" href="#boutique">Boutique</a>
-      </div>
-    </div>
+    <p>© <span id="year"></span> — Anthony Gendre (Krozer). Tous droits réservés.</p>
   </footer>
 
+  <!-- 🛒 Bouton flottant Amazon -->
+  <a class="buy-fab" href="https://amzn.eu/d/1GW4rCE" target="_blank" rel="noopener nofollow" aria-label="Acheter le livre sur Amazon">📜 Acheter (3€)</a>
+
+  <!-- Année auto -->
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+
+  <!-- ✨ ÉTOILES -->
+  <canvas id="stars" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;"></canvas>
   <script>
-    // année dynamique
-    document.getElementById('year').textContent = new Date().getFullYear();
+  const c=document.getElementById('stars'),x=c.getContext('2d');
+  function R(){c.width=innerWidth;c.height=innerHeight}
+  R();addEventListener('resize',R);
+  let s=[];for(let i=0;i<150;i++)s.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5,dx:(Math.random()-.5)*.2,dy:(Math.random()-.5)*.2});
+  (function D(){x.clearRect(0,0,innerWidth,innerHeight);
+  for(let a of s){x.beginPath();x.arc(a.x,a.y,a.r,0,2*Math.PI);x.fillStyle='rgba(255,255,255,.8)';x.fill();
+  a.x+=a.dx;a.y+=a.dy;if(a.x<0||a.x>innerWidth)a.dx*=-1;if(a.y<0||a.y>innerHeight)a.dy*=-1;}
+  requestAnimationFrame(D)})();
+  </script>
 
-    // menu mobile
-    const toggle = document.getElementById('menuToggle');
-    const panel = document.getElementById('menuPanel');
-    toggle?.addEventListener('click', ()=>{
-      const open = panel.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      panel.setAttribute('aria-hidden', open ? 'false' : 'true');
-    });
-    panel?.addEventListener('click', (e)=>{
-      if(e.target.tagName === 'A'){ panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
-    });
+  <!-- 📱 Menu burger + Fermeture auto -->
+  <script>
+  const b=document.getElementById('burger'), list=document.getElementById('navList');
+  b?.addEventListener('click',()=>{const open=list.classList.toggle('show');b.setAttribute('aria-expanded',open)});
+  list?.querySelectorAll('a')?.forEach(a=>{a.added||(a.added=1,a.addEventListener('click',()=>{list.classList.remove('show');b.setAttribute('aria-expanded','false')}))});
+  </script>
 
-    // Formulaire (démo locale)
-    function sendMessage(e){
-      e.preventDefault();
-      const form = e.target;
-      const data = Object.fromEntries(new FormData(form).entries());
-      console.log('Message simulé →', data);
-      const status = document.getElementById('formStatus');
-      status.textContent = '✅ Message préparé (démo). Connecte EmailJS ou Formspree pour l’envoi réel.';
-      form.reset();
-    }
+  <!-- ✨ Apparition douce au scroll -->
+  <script>
+  const obs=new IntersectionObserver((ents)=>{
+    ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('section, .card').forEach(el=>{el.classList.add('reveal'); obs.observe(el);});
   </script>
 </body>
 </html>
