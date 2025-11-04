@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://krozer24.github.io/academiedes4saisons/sitemap.xml
